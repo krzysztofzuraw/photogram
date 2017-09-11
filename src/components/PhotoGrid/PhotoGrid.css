@@ -1,0 +1,10 @@
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.photo-grid-column {
+    padding: 1rem;
+}
+

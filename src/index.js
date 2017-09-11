@@ -1,7 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import PhotoGrid from './components/PhotoGrid/PhotoGrid.jsx';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const router = (
+    <Router>
+        <Route exact path="/" component={PhotoGrid}/>
+    </Router>
+)
+
+
+ReactDOM.render(router, document.getElementById('root'));
 registerServiceWorker();
