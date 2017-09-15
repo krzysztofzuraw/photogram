@@ -1,12 +1,16 @@
 import React from 'react';
 import Photo from '../Photo/Photo.jsx';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Header } from 'semantic-ui-react'
 
 import './PhotoGrid.css'
 
 function PhotoGrid () {
     return (
-      <Grid columns={3} className="photo-grid">
+      <div>
+        <Header as='h1' textAlign='center' className="photo-grid-header">
+          Unsplashgram
+        </Header>
+        <Grid columns={3} className="photo-grid">
           <Grid.Column className="photo-grid-column">
             <Photo />
           </Grid.Column>
@@ -42,7 +46,8 @@ function PhotoGrid () {
           <Grid.Column className="photo-grid-column">
             <Photo />
           </Grid.Column>
-      </Grid>
+        </Grid>
+      </div>
     );
 }
 
