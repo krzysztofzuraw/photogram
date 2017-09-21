@@ -1,7 +1,7 @@
 {
   "name": "unsplashgram",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -16,5 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "prettier-eslint": "^8.1.1"
   }
 }

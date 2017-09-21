@@ -1,29 +1,23 @@
-import React from 'react';
-import { Image, Segment, Card } from 'semantic-ui-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Image, Card } from "semantic-ui-react";
 
-import './Photo.css';
+import "./Photo.css";
 
-function Photo () {
-    return (
-        <Card className="photo-card">
-            <Image src='http://via.placeholder.com/200x200' />
-            <Card.Content>
-                <Card.Header>
-                    My Photo
-                </Card.Header>
-                <Card.Meta>
-                    Meta
-                </Card.Meta>
-                <Card.Description>
-                    My cool Description
-                </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-                Likes: 22
-                Comments: 1
-            </Card.Content>
-        </Card>
-    );
+function Photo() {
+  return (
+    <Card className="photo-card">
+      <Link to={"/photo/1"}>
+        <Image src="http://via.placeholder.com/200x200" />
+      </Link>
+      <Card.Content>
+        <Card.Header>My Photo</Card.Header>
+        <Card.Meta>Meta</Card.Meta>
+        <Card.Description>My cool Description</Card.Description>
+      </Card.Content>
+      <Card.Content extra>Likes: 22 Comments: 1</Card.Content>
+    </Card>
+  );
 }
 
 export default Photo;
