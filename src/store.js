@@ -1,5 +1,5 @@
-import { createStore, compse } from "redux";
-import { browserHistory } from "react-router";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
 
 import rootReducer from "./reducers";
 
@@ -10,7 +10,10 @@ const defaultState = {
 const store = createStore(
   rootReducer,
   defaultState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 );
 
 export default store;
