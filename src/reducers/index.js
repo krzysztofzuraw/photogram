@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import { REQUEST_PHOTOS } from "../actions/index.js";
+import { REQUEST_PHOTOS, RECEIVE_PHOTOS } from "../actions/index.js";
 
 const photos = (state = { isFetching: false, photos: [] }, action) => {
   switch (action.type) {
@@ -8,6 +8,12 @@ const photos = (state = { isFetching: false, photos: [] }, action) => {
       return {
         ...state,
         isFetching: true
+      };
+    case RECEIVE_PHOTOS:
+      return {
+        ...state,
+        isFetching: false,
+        photos: action.photos
       };
     default:
       return state;

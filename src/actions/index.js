@@ -16,5 +16,5 @@ export const fetchPhotos = () => dispatch => {
 
 const receivePhotos = json => ({
   type: RECEIVE_PHOTOS,
-  posts: json
+  photos: json
 });

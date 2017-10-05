@@ -13,46 +13,18 @@ class PhotoGrid extends React.Component {
   }
 
   render() {
+    const { photos } = this.props;
     return (
       <div>
         <Header as="h1" textAlign="center" className="photo-grid-header">
           Unsplashgram
         </Header>
         <Grid columns={3} className="photo-grid">
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
-          <Grid.Column className="photo-grid-column">
-            <Photo />
-          </Grid.Column>
+          {photos.map((photo, key) => (
+            <Grid.Column className="photo-grid-column" key={key}>
+              <Photo />
+            </Grid.Column>
+          ))}
         </Grid>
       </div>
     );
@@ -60,7 +32,7 @@ class PhotoGrid extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  photos: state.photos
+  photos: state.photos.photos
 });
 
 const mapDispatchToProps = dispatch => ({
