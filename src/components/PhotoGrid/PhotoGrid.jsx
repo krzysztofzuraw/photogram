@@ -22,7 +22,7 @@ class PhotoGrid extends React.Component {
         <Grid columns={3} className="photo-grid">
           {photos.map((photo, key) => (
             <Grid.Column className="photo-grid-column" key={key}>
-              <Photo />
+              <Photo photo={photo} renderSmall />
             </Grid.Column>
           ))}
         </Grid>
