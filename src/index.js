@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import createHistory from "history/createBrowserHistory";
+import { Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import PhotoGrid from "./components/PhotoGrid/PhotoGrid.jsx";
@@ -10,9 +11,11 @@ import registerServiceWorker from "./registerServiceWorker";
 
 import "./index.css";
 
+const history = createHistory();
+
 const router = (
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       <Switch>
         <Route exact path="/" component={PhotoGrid} />
         <Route path="/photo/:photoId" component={SinglePhoto} />
