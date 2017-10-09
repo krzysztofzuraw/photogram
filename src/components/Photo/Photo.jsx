@@ -25,5 +25,3 @@ function Photo(props) {
 }
 
 export default Photo;
-
-// https://react.semantic-ui.com/views/card use instead of segment
