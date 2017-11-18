@@ -30,11 +30,10 @@ export const addComment = (photoId, author, comment) => dispatch => {
   });
 };
 
-export const removeComment = (photoId, author, comment) => dispatch => {
-  return {
+export const removeComment = (photoId, position) => dispatch => {
+  dispatch({
     type: REMOVE_COMMENT,
     photoId,
-    author,
-    comment
-  };
+    position
+  });
 };

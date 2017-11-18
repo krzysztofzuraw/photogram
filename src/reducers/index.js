@@ -6,6 +6,7 @@ import {
   ADD_COMMENT,
   REMOVE_COMMENT
 } from "../actions/index.js";
+import { Object } from "core-js/library/web/timers";
 
 const photos = (state = { isFetching: false, photos: [] }, action) => {
   switch (action.type) {
@@ -25,19 +26,25 @@ const photos = (state = { isFetching: false, photos: [] }, action) => {
   }
 };
 
-const comments = (state = [], action) => {
+const comments = (state = {}, action) => {
   switch (action.type) {
     case ADD_COMMENT:
-      return [
+      const stateWithNewComment = Object.assign({}, state);
+      stateWithNewComment[action.photoId] = [
         {
           author: action.author,
-          photoId: action.photoId,
           text: action.comment
         },
-        ...state
+        ...(stateWithNewComment[action.photoId] || [])
       ];
+      return stateWithNewComment;
     case REMOVE_COMMENT:
-      return state;
+      const stateWithCommentRemoved = Object.assign({}, state);
+      stateWithCommentRemoved[action.photoId] = [
+        ...state[action.photoId].slice(0, action.position),
+        ...state[action.photoId].slice(action.position + 1)
+      ];
+      return stateWithCommentRemoved;
     default:
       return state;
   }
