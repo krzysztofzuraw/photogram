@@ -16,8 +16,9 @@ class CommentsContainer extends React.Component {
     this.props.removeComment(position);
   }
 
-  handleSubmit(event) {
+  handleSubmit(event, { name, value }) {
     event.preventDefault();
+    debugger;
     this.props.addComment(this.refs.author.value, this.refs.comment.value);
     this.refs.author.value = "";
     this.refs.comment.value = "";

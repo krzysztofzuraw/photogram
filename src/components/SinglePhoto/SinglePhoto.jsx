@@ -1,7 +1,7 @@
 import React from "react";
 
 import Photo from "../Photo/Photo.jsx";
-import Comments from "../Comments/Comments.jsx";
+import CommentsContainer from "../Comments/CommentsContainer.jsx";
 
 import "./SinglePhoto.css";
 
@@ -10,7 +10,7 @@ function SinglePhoto(props) {
   return (
     <div className="single-photo">
       <Photo photo={photo} />
-      <Comments photo={photo} />
+      <CommentsContainer photo={photo} />
     </div>
   );
 }

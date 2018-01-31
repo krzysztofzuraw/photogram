@@ -16,7 +16,7 @@ class PhotoGridContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  photos: state.photos.photos
+  photos: state.photos
 });
 
 const mapDispatchToProps = dispatch => ({

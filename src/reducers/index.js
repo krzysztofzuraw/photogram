@@ -1,26 +1,16 @@
 import { combineReducers } from "redux";
 
 import {
-  REQUEST_PHOTOS,
   RECEIVE_PHOTOS,
   ADD_COMMENT,
   REMOVE_COMMENT
 } from "../actions/index.js";
 import { Object } from "core-js/library/web/timers";
 
-const photos = (state = { isFetching: false, photos: [] }, action) => {
+const photos = (state = [], action) => {
   switch (action.type) {
-    case REQUEST_PHOTOS:
-      return {
-        ...state,
-        isFetching: true
-      };
     case RECEIVE_PHOTOS:
-      return {
-        ...state,
-        isFetching: false,
-        photos: action.photos
-      };
+      return [...state, ...action.photos];
     default:
       return state;
   }

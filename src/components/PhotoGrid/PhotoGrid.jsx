@@ -6,6 +6,7 @@ import { Grid, Header } from "semantic-ui-react";
 import "./PhotoGrid.css";
 
 function PhotoGrid(props) {
+  debugger;
   return (
     <div>
       <Header as="h1" textAlign="center" className="photo-grid-header">
