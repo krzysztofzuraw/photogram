@@ -1,27 +1,50 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Image, Card } from "semantic-ui-react";
 
 import "./Photo.css";
 
-function Photo(props) {
-  const { id, description, urls } = props.photo;
-  const { renderSmall } = props;
-  const imageUrl = renderSmall ? urls.small : urls.regular;
+import UserIcon from "./UserIcon";
+import HearthIcon from "./HearthIcon";
+import ConversationIcon from "./ConversationIcon";
 
-  return (
-    <Card className="photo-card">
-      <Link to={`/photo/${id}`}>
-        <Image src={imageUrl} />
-      </Link>
-      <Card.Content>
-        <Card.Header>My Photo</Card.Header>
-        <Card.Meta>Meta</Card.Meta>
-        <Card.Description>{description || "No description"}</Card.Description>
-      </Card.Content>
-      <Card.Content extra>Likes: 22 Comments: 1</Card.Content>
-    </Card>
-  );
+class Photo extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { likes: 0 };
+  }
+
+  handleLike = () => {
+    this.setState({ likes: this.state.likes + 1 });
+  };
+
+  render() {
+    const {
+      urls: { small },
+      user: { name, links: { self } }
+    } = this.props.photo;
+    return (
+      <div className="photo">
+        <div className="photo-header">
+          <UserIcon width={30} height={30} />
+          <a href={self} className="photo-author">
+            {name}
+          </a>
+        </div>
+        <img
+          alt="placeholder"
+          className="photo-img"
+          onClick={() => console.log("redirect to photo")}
+          src={small}
+        />
+        <div className="photo-meta">
+          <HearthIcon width={30} height={30} onClickHandler={this.handleLike} />
+          <span>{this.state.likes}</span>
+          <ConversationIcon width={30} height={30} />
+          <span>20</span>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Photo;

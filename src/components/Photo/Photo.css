@@ -1,5 +1,76 @@
-.photo-card {
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    padding: 1em;
-    border: 1px solid rgba(34,36,38,.15);
+@font-face {
+  font-family: "Merriweather";
+  src: local("Merriweather");
+}
+
+.photo {
+  max-width: 400px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.18);
+  background-color: #fff;
+  font-family: "Merriweather", sans-serif;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto 50px;
+}
+
+.photo-header {
+  grid-row: 1 / 2;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  fill: #1cba77;
+}
+
+.photo-header .user-icon {
+  margin-left: 20px;
+}
+
+.photo-author {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #222;
+}
+
+.photo-author:hover {
+  color: #1cba77;
+}
+
+.photo-img {
+  grid-row: 3 / 2;
+}
+
+.photo-img:hover {
+  cursor: pointer;
+}
+
+.photo-meta {
+  grid-row: 3 / 3;
+  display: flex;
+  align-items: center;
+  color: #586368;
+}
+
+.photo-hearth:hover {
+  fill: #990000;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  transform: translateY(-2px);
+}
+
+.photo-meta .photo-hearth {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.photo-meta .comments-icon {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.photo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }

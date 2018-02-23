@@ -1,24 +1,20 @@
 import React from "react";
 
 import Photo from "../Photo/Photo.jsx";
-import { Grid, Header } from "semantic-ui-react";
+
+import Header from "../Header/Header";
 
 import "./PhotoGrid.css";
 
 function PhotoGrid(props) {
-  debugger;
   return (
-    <div>
-      <Header as="h1" textAlign="center" className="photo-grid-header">
-        Unsplashgram
-      </Header>
-      <Grid columns={3} className="photo-grid">
-        {props.photos.map((photo, key) => (
-          <Grid.Column className="photo-grid-column" key={key}>
-            <Photo photo={photo} renderSmall />
-          </Grid.Column>
-        ))}
-      </Grid>
+    <div className="wrapper">
+      <Header />
+      {props.photos.map((photo, key) => (
+        <div className="panel" key={key}>
+          <Photo photo={photo} renderSmall />
+        </div>
+      ))}
     </div>
   );
 }
