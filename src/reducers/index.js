@@ -5,7 +5,6 @@ import {
   ADD_COMMENT,
   REMOVE_COMMENT
 } from "../actions/index.js";
-import { Object } from "core-js/library/web/timers";
 
 const photos = (state = [], action) => {
   switch (action.type) {

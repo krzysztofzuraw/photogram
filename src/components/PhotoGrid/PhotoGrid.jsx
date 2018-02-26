@@ -12,7 +12,12 @@ function PhotoGrid(props) {
       <Header />
       {props.photos.map((photo, key) => (
         <div className="panel" key={key}>
-          <Photo photo={photo} renderSmall />
+          <Photo
+            id={photo.id}
+            url={photo.urls.small}
+            user={photo.user}
+            style={{ maxWidth: 400 }}
+          />
         </div>
       ))}
     </div>
