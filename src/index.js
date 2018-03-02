@@ -6,12 +6,14 @@ import { Provider } from "react-redux";
 
 import PhotoGridContainer from "./components/PhotoGrid/PhotoGridContainer.jsx";
 import SinglePhotoContainer from "./components/SinglePhoto/SinglePhotoContainer.jsx";
-import store from "./store";
+import configureStore from "./configureStore";
 import registerServiceWorker from "./registerServiceWorker";
 
 import "./index.css";
 
 const history = createHistory();
+
+const store = configureStore();
 
 const router = (
   <Provider store={store}>

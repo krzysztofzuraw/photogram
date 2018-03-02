@@ -1,51 +1,47 @@
 import React from "react";
 
-import { Comment, Form, Button } from "semantic-ui-react";
+import "./Comments.css";
 
-class Comments extends React.Component {
-  render() {
-    return (
-      <Comment.Group size="large">
-        {this.props.comments
-          ? this.props.comments.map((comment, key) => (
-              <Comment key={key}>
-                <Comment.Content>
-                  <Comment.Author>{comment.author}</Comment.Author>
-                  <Comment.Text>{comment.text}</Comment.Text>
-                </Comment.Content>
-                <Button
-                  content="Delete comment"
-                  labelPosition="left"
-                  icon="delete"
-                  secondary
-                  onClick={() => this.props.handleCommentDelete(key)}
-                />
-              </Comment>
-            ))
-          : null}
-
-        <Form onSubmit={this.props.handleSubmit}>
-          {/* <Form.Field>
-            <input placeholder="Name" type="text" required ref="author" />
-          </Form.Field>
-          <Form.Field>
-            <input placeholder="Comment" type="text" ref="comment" />
-          </Form.Field> */}
-          <Form.Input
+const Comments = () => {
+  return (
+    <div className="comments">
+      <div className="comments-header">
+        <span className="comments-header-title">Comments</span>
+      </div>
+      <div className="comments-list">
+        <div className="comment">
+          <h3>Cesar Farias</h3>
+          <p>Damn, how awesome!</p>
+        </div>
+        <div className="comment">
+          <h3>Cesar Farias</h3>
+          <p>Damn, how awesome!</p>
+        </div>
+        <div className="comment">
+          <h3>Cesar Farias</h3>
+          <p>Damn, how awesome!</p>
+        </div>
+      </div>
+      <div className="form-wrapper">
+        <form className="comment-form">
+          <input
+            type="text"
+            id="name"
+            name="user_name"
             placeholder="Name"
-            name="name"
-            onChange={this.props.handleSubmit}
+            className="form-input"
           />
-          <Button
-            content="Add comment"
-            labelPosition="left"
-            icon="edit"
-            primary
+          <textarea
+            id="msg"
+            name="user_message"
+            placeholder="Message"
+            className="form-input"
           />
-        </Form>
-      </Comment.Group>
-    );
-  }
-}
+          <input type="submit" value="Submit" className="form-button" />
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default Comments;

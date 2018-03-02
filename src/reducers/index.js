@@ -15,25 +15,10 @@ const photos = (state = [], action) => {
   }
 };
 
-const comments = (state = {}, action) => {
+const comments = (state = [], action) => {
   switch (action.type) {
     case ADD_COMMENT:
-      const stateWithNewComment = Object.assign({}, state);
-      stateWithNewComment[action.photoId] = [
-        {
-          author: action.author,
-          text: action.comment
-        },
-        ...(stateWithNewComment[action.photoId] || [])
-      ];
-      return stateWithNewComment;
-    case REMOVE_COMMENT:
-      const stateWithCommentRemoved = Object.assign({}, state);
-      stateWithCommentRemoved[action.photoId] = [
-        ...state[action.photoId].slice(0, action.position),
-        ...state[action.photoId].slice(action.position + 1)
-      ];
-      return stateWithCommentRemoved;
+      return state;
     default:
       return state;
   }
