@@ -1,6 +1,6 @@
 import React from "react";
 
-import Photo from "../Photo/Photo.jsx";
+import PhotoContainer from "../Photo/PhotoContainer.jsx";
 
 import Header from "../Header/Header";
 
@@ -12,7 +12,7 @@ function PhotoGrid(props) {
       <Header />
       {props.photos.map((photo, key) => (
         <div className="panel" key={key}>
-          <Photo
+          <PhotoContainer
             id={photo.id}
             url={photo.urls.small}
             user={photo.user}

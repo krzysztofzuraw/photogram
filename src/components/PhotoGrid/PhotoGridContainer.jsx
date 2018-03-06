@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { fetchPhotos } from "../../actions/index.js";
+import { fetchPhotos } from "../../actions";
 
 import PhotoGrid from "./PhotoGrid";
 

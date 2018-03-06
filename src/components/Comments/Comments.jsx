@@ -11,10 +11,10 @@ const Comments = ({ comments }) => {
         <span className="comments-header-title">Comments</span>
       </div>
       <div className="comments-list">
-        {comments.map(comment => (
-          <div className="comment">
-            <h3>Cesar Farias</h3>
-            <p>Damn, how awesome!</p>
+        {comments.map((comment, key) => (
+          <div className="comment" key={key}>
+            <h3>{comment.author}</h3>
+            <p>{comment.text}</p>
           </div>
         ))}
       </div>

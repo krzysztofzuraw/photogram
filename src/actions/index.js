@@ -2,6 +2,7 @@ import { UNSPLASH_API_KEY } from "../external_api.js";
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const ADD_COMMENT = "ADD_COMMENT";
+export const ADD_LIKE = "ADD_LIKE";
 
 export const fetchPhotos = () => dispatch => {
   return fetch(`https://api.unsplash.com/photos/?client_id=${UNSPLASH_API_KEY}`)
@@ -19,4 +20,9 @@ export const addComment = (photoId, author, comment) => ({
   photoId,
   author,
   comment
+});
+
+export const addLike = photoId => ({
+  type: ADD_LIKE,
+  photoId
 });
