@@ -1,7 +1,7 @@
 import React from "react";
 
 import Photo from "../Photo/Photo.jsx";
-import Comments from "../Comments/Comments.jsx";
+import CommentsContainer from "../Comments/CommentsContainer.jsx";
 
 import "./SinglePhoto.css";
 
@@ -13,7 +13,7 @@ const SinglePhoto = props => {
         url={props.photo.urls.regular}
         user={props.photo.user}
       />
-      <Comments />
+      <CommentsContainer />
     </div>
   );
 };

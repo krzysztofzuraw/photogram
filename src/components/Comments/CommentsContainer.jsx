@@ -3,47 +3,28 @@ import { connect } from "react-redux";
 
 import Comments from "./Comments.jsx";
 
-import { addComment, removeComment } from "../../actions/index.js";
+// import { addComment } from "../../actions/index.js";
 
-class CommentsContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCommentDelete = this.handleCommentDelete.bind(this);
-  }
+// class CommentsContainer extends React.Component {
+//   // handleSubmit(event, { name, value }) {
+//   //   event.preventDefault();
+//   //   debugger;
+//   //   this.props.addComment(this.refs.author.value, this.refs.comment.value);
+//   //   this.refs.author.value = "";
+//   //   this.refs.comment.value = "";
+//   // }
 
-  handleCommentDelete(position) {
-    this.props.removeComment(position);
-  }
+//   render() {
+//     return <Comments comments={this.props.comments} />;
+//   }
+// }
 
-  handleSubmit(event, { name, value }) {
-    event.preventDefault();
-    debugger;
-    this.props.addComment(this.refs.author.value, this.refs.comment.value);
-    this.refs.author.value = "";
-    this.refs.comment.value = "";
-  }
-
-  render() {
-    return (
-      <Comments
-        comments={this.props.comments}
-        handleSubmit={this.handleSubmit}
-        handleCommentDelete={this.handleCommentDelete}
-      />
-    );
-  }
-}
+// // const mapDispatchToProps = (dispatch, ownProps) => ({
+// //   addComment: (author, comment) =>
+// //     dispatch(addComment(ownProps.photo.id, author, comment))
+// // });
 
 const mapStateToProps = (state, ownProps) => ({
-  comments: state.comments[ownProps.photo.id] || []
+  comments: state.comments
 });
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  addComment: (author, comment) =>
-    dispatch(addComment(ownProps.photo.id, author, comment)),
-  removeComment: position =>
-    dispatch(removeComment(ownProps.photo.id, position))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer);
+export default connect(mapStateToProps)(Comments);
