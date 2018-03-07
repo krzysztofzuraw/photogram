@@ -5,3 +5,8 @@
   font-size: 5rem;
   color: #1cba77;
 }
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-around;
+}

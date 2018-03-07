@@ -2,14 +2,14 @@ import React from "react";
 
 import PhotoContainer from "../Photo/PhotoContainer.jsx";
 
-import Header from "../Header/Header";
+import HeaderContainer from "../Header/HeaderContainer";
 
 import "./PhotoGrid.css";
 
 function PhotoGrid(props) {
   return (
     <div className="wrapper">
-      <Header />
+      <HeaderContainer />
       {props.photos.map((photo, key) => (
         <div className="panel" key={key}>
           <PhotoContainer

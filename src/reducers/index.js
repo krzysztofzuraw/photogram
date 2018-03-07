@@ -1,6 +1,11 @@
 import { combineReducers } from "redux";
 
-import { RECEIVE_PHOTOS, ADD_COMMENT, ADD_LIKE } from "../actions";
+import {
+  RECEIVE_PHOTOS,
+  ADD_COMMENT,
+  ADD_LIKE,
+  REMOVE_PHOTOS
+} from "../actions";
 
 const photos = (state = [], action) => {
   switch (action.type) {
@@ -36,6 +41,13 @@ const likes = (state = [], action) => {
   }
 };
 
-const rootReducer = combineReducers({ photos, comments, likes });
+const appReducer = combineReducers({ photos, comments, likes });
+
+const rootReducer = (state, action) => {
+  if (action.type === REMOVE_PHOTOS) {
+    state = undefined;
+  }
+  return appReducer(state, action);
+};
 
 export default rootReducer;
