@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import Comments from "./Comments.jsx";
 
 const mapStateToProps = (state, { match }) => ({
-  comments: state.comments.filter(
+  comments: state.rootReducer.comments.filter(
     comment => comment.photoId === match.params.photoId
   )
 });

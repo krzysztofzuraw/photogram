@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import SinglePhoto from "./SinglePhoto.jsx";
 
 const mapStateToProps = (state, ownProps) => ({
-  photo: state.photos.find(element => {
+  photo: state.rootReducer.photos.find(element => {
     return element.id === ownProps.match.params.photoId;
   })
 });

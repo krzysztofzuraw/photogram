@@ -5,8 +5,8 @@ import "./Header.css";
 const Header = ({ removePhotos, fetchPhotos }) => {
   return (
     <header className="header">
-      <span class="header-wrapper">
-        <span class="header-text">Photogram</span>
+      <span className="header-wrapper">
+        <span className="header-text">Photogram</span>
         <button
           className="form-button"
           onClick={() => {

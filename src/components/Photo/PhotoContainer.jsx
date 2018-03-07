@@ -16,9 +16,10 @@ class PhotoContainer extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  commentsSum: state.comments.filter(comment => comment.photoId === ownProps.id)
-    .length,
-  likesSum: state.likes.filter(id => id === ownProps.id).length
+  commentsSum: state.rootReducer.comments.filter(
+    comment => comment.photoId === ownProps.id
+  ).length,
+  likesSum: state.rootReducer.likes.filter(id => id === ownProps.id).length
 });
 
 export default connect(mapStateToProps, { addLike })(PhotoContainer);

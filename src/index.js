@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import createHistory from "history/createBrowserHistory";
 import { Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/es/integration/react";
 
 import PhotoGridContainer from "./components/PhotoGrid/PhotoGridContainer.jsx";
 import SinglePhotoContainer from "./components/SinglePhoto/SinglePhotoContainer.jsx";
@@ -13,16 +14,18 @@ import "./index.css";
 
 const history = createHistory();
 
-const store = configureStore();
+const { persistor, store } = configureStore();
 
 const router = (
   <Provider store={store}>
-    <Router history={history}>
-      <Switch>
-        <Route exact path="/" component={PhotoGridContainer} />
-        <Route path="/photo/:photoId" component={SinglePhotoContainer} />
-      </Switch>
-    </Router>
+    <PersistGate persistor={persistor}>
+      <Router history={history}>
+        <Switch>
+          <Route exact path="/" component={PhotoGridContainer} />
+          <Route path="/photo/:photoId" component={SinglePhotoContainer} />
+        </Switch>
+      </Router>
+    </PersistGate>
   </Provider>
 );
 

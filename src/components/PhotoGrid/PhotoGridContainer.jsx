@@ -7,7 +7,9 @@ import PhotoGrid from "./PhotoGrid";
 
 class PhotoGridContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchPhotos();
+    if (!this.props.photos.length) {
+      this.props.fetchPhotos();
+    }
   }
 
   render() {
@@ -16,7 +18,7 @@ class PhotoGridContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  photos: state.photos
+  photos: state.rootReducer.photos
 });
 
 const mapDispatchToProps = dispatch => ({
