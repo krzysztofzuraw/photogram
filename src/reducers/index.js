@@ -6,8 +6,6 @@ const photos = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_PHOTOS:
       return [...state, ...action.photos];
-    case ADD_LIKE:
-      return [...state, state.filter(photo => photo.id === action.photoId)];
     default:
       return state;
   }
@@ -29,6 +27,15 @@ const comments = (state = [], action) => {
   }
 };
 
-const rootReducer = combineReducers({ photos, comments });
+const likes = (state = [], action) => {
+  switch (action.type) {
+    case ADD_LIKE:
+      return [...state, action.photoId];
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({ photos, comments, likes });
 
 export default rootReducer;

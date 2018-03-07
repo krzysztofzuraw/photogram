@@ -5,10 +5,9 @@ import Photo from "./Photo";
 import { addLike } from "../../actions";
 
 class PhotoContainer extends React.Component {
-  state = { likes: 0 };
-
   handleLike = () => {
-    debugger;
+    const { addLike, id } = this.props;
+    addLike(id);
   };
 
   render() {
@@ -18,7 +17,8 @@ class PhotoContainer extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
   commentsSum: state.comments.filter(comment => comment.photoId === ownProps.id)
-    .length
+    .length,
+  likesSum: state.likes.filter(id => id === ownProps.id).length
 });
 
 export default connect(mapStateToProps, { addLike })(PhotoContainer);
