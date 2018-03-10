@@ -1,12 +1,13 @@
 import React from "react";
 import Spinner from "react-spinkit";
 
-import PhotoContainer from "../Photo/PhotoContainer.jsx";
+import PhotoContainer from "../Photo/PhotoContainer";
 import HeaderContainer from "../Header/HeaderContainer";
+import Error from "../Error/Error";
 
 import "./PhotoGrid.css";
 
-const PhotoGrid = ({ photos, isFetching }) => {
+const PhotoGrid = ({ photos, isFetching, errorMessage, fetchPhotos }) => {
   if (isFetching && !photos.length) {
     return (
       <div className="wrapper">
@@ -17,6 +18,18 @@ const PhotoGrid = ({ photos, isFetching }) => {
       </div>
     );
   }
+
+  if (errorMessage && !photos.length) {
+    return (
+      <div className="wrapper">
+        <HeaderContainer />
+        <div className="spinner-wrapper">
+          <Error errorMessage onClick={fetchPhotos()} />;
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="wrapper">
       <HeaderContainer />
