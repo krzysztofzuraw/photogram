@@ -1,16 +1,26 @@
 import React from "react";
+import Spinner from "react-spinkit";
 
 import PhotoContainer from "../Photo/PhotoContainer.jsx";
-
 import HeaderContainer from "../Header/HeaderContainer";
 
 import "./PhotoGrid.css";
 
-function PhotoGrid(props) {
+const PhotoGrid = ({ photos, isFetching }) => {
+  if (isFetching && !photos.length) {
+    return (
+      <div className="wrapper">
+        <HeaderContainer />
+        <div className="spinner-wrapper">
+          <Spinner name="ball-spin-fade-loader" color="green" />
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="wrapper">
       <HeaderContainer />
-      {props.photos.map((photo, key) => (
+      {photos.map((photo, key) => (
         <div className="panel" key={key}>
           <PhotoContainer
             id={photo.id}
@@ -22,6 +32,6 @@ function PhotoGrid(props) {
       ))}
     </div>
   );
-}
+};
 
 export default PhotoGrid;

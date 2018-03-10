@@ -13,12 +13,18 @@ class PhotoGridContainer extends React.Component {
   }
 
   render() {
-    return <PhotoGrid photos={this.props.photos} />;
+    return (
+      <PhotoGrid
+        photos={this.props.photos}
+        isFetching={this.props.isFetching}
+      />
+    );
   }
 }
 
 const mapStateToProps = state => ({
-  photos: state.rootReducer.photos
+  photos: state.rootReducer.photos,
+  isFetching: state.rootReducer.isFetching
 });
 
 const mapDispatchToProps = dispatch => ({
