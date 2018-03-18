@@ -18,11 +18,12 @@ export const fetchPhotos = () => dispatch => {
   )
     .then(
       response => response.json(),
-      error =>
+      error => {
         dispatch({
           type: FETCH_PHOTOS_FAILURE,
           message: error.message || "Something went wrong"
-        })
+        });
+      }
     )
     .then(json =>
       dispatch({
