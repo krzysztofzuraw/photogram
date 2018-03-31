@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Photo from "./Photo";
 import { addLike } from "../../actions";
 
-class PhotoContainer extends React.Component {
+export class PhotoContainer extends React.Component {
   handleLike = () => {
     const { addLike, id } = this.props;
     addLike(id);
