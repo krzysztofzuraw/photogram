@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 
@@ -54,5 +55,10 @@ export class CommentsFormContainer extends React.Component {
     );
   }
 }
+
+CommentsFormContainer.PropTypes = {
+  dispatch: PropTypes.func,
+  match: PropTypes.object
+};
 
 export default withRouter(connect()(CommentsFormContainer));

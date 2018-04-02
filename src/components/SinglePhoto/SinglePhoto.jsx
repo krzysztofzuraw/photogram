@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import PhotoContainer from "../Photo/PhotoContainer.jsx";
 import CommentsContainer from "../Comments/CommentsContainer.jsx";
@@ -16,6 +17,10 @@ const SinglePhoto = props => {
       <CommentsContainer />
     </div>
   );
+};
+
+SinglePhoto.PropTypes = {
+  photo: PropTypes.object
 };
 
 export default SinglePhoto;

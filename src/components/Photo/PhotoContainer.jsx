@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import Photo from "./Photo";
@@ -14,6 +15,11 @@ export class PhotoContainer extends React.Component {
     return <Photo {...this.props} handleLike={this.handleLike} />;
   }
 }
+
+PhotoContainer.PropTypes = {
+  addLike: PropTypes.func,
+  id: PropTypes.string
+};
 
 const mapStateToProps = (state, ownProps) => ({
   commentsSum: state.rootReducer.comments.filter(

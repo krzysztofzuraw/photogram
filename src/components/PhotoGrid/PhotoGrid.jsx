@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Spinner from "react-spinkit";
 
 import PhotoContainer from "../Photo/PhotoContainer";
@@ -47,4 +48,10 @@ const PhotoGrid = ({ photos, isFetching, errorMessage, fetchPhotos }) => {
   );
 };
 
+PhotoGrid.PropTypes = {
+  photos: PropTypes.array,
+  isFetching: PropTypes.bool,
+  errorMessage: PropTypes.string,
+  fetchPhotos: PropTypes.func
+};
 export default PhotoGrid;

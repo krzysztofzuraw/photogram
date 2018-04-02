@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Error = ({ message, onClick }) => {
   return (
@@ -8,6 +9,11 @@ const Error = ({ message, onClick }) => {
       <button>Retry?</button>
     </div>
   );
+};
+
+Error.PropTypes = {
+  message: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 export default Error;

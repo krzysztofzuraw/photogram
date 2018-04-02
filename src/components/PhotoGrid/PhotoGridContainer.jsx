@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { fetchPhotos } from "../../actions";
@@ -27,6 +28,10 @@ export class PhotoGridContainer extends React.Component {
     );
   }
 }
+
+PhotoGridContainer.PropTypes = {
+  fetchPhotos: PropTypes.func
+};
 
 const mapStateToProps = state => ({
   photos: state.rootReducer.photos,

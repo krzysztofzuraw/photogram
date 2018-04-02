@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./Header.css";
 
@@ -19,6 +20,11 @@ const Header = ({ removePhotos, fetchPhotos }) => {
       </span>
     </header>
   );
+};
+
+Header.PropTypes = {
+  removePhotos: PropTypes.func,
+  fetchPhotos: PropTypes.func
 };
 
 export default Header;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import "./Photo.css";
@@ -35,6 +36,15 @@ const Photo = ({
       </div>
     </div>
   );
+};
+
+Photo.PropTypes = {
+  id: PropTypes.string,
+  url: PropTypes.string,
+  user: PropTypes.object,
+  commentsSum: PropTypes.number,
+  likesSum: PropTypes.number,
+  handleLike: PropTypes.func
 };
 
 export default Photo;

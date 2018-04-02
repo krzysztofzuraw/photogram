@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import CommentsFormContainer from "./CommentsFormContainer";
 
@@ -21,6 +22,10 @@ const Comments = ({ comments }) => {
       <CommentsFormContainer />
     </div>
   );
+};
+
+Comments.PropTypes = {
+  comments: PropTypes.array
 };
 
 export default Comments;
