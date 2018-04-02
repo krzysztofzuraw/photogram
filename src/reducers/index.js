@@ -9,7 +9,7 @@ import {
   FETCH_PHOTOS_FAILURE
 } from "../actions";
 
-const photos = (state = [], action) => {
+export const photos = (state = [], action) => {
   switch (action.type) {
     case FETCH_PHOTOS_SUCCESS:
       return [...state, ...action.photos];
@@ -18,7 +18,7 @@ const photos = (state = [], action) => {
   }
 };
 
-const isFetching = (state = false, action) => {
+export const isFetching = (state = false, action) => {
   switch (action.type) {
     case FETCH_PHOTOS_REQUEST:
       return true;
@@ -29,7 +29,7 @@ const isFetching = (state = false, action) => {
   }
 };
 
-const errorMessage = (state = null, action) => {
+export const errorMessage = (state = null, action) => {
   switch (action.type) {
     case FETCH_PHOTOS_FAILURE:
       return action.message;
@@ -38,7 +38,7 @@ const errorMessage = (state = null, action) => {
   }
 };
 
-const comments = (state = [], action) => {
+export const comments = (state = [], action) => {
   switch (action.type) {
     case ADD_COMMENT:
       return [
@@ -54,7 +54,7 @@ const comments = (state = [], action) => {
   }
 };
 
-const likes = (state = [], action) => {
+export const likes = (state = [], action) => {
   switch (action.type) {
     case ADD_LIKE:
       return [...state, action.photoId];
@@ -71,7 +71,7 @@ const appReducer = combineReducers({
   errorMessage
 });
 
-const rootReducer = (state, action) => {
+export const rootReducer = (state, action) => {
   if (action.type === REMOVE_PHOTOS) {
     state = undefined;
   }
