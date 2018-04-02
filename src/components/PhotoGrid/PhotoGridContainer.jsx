@@ -5,7 +5,7 @@ import { fetchPhotos } from "../../actions";
 
 import PhotoGrid from "./PhotoGrid";
 
-class PhotoGridContainer extends React.Component {
+export class PhotoGridContainer extends React.Component {
   componentDidMount() {
     if (!this.props.photos.length) {
       this.fetchPhotos();

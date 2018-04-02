@@ -1,13 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PhotoGrid Component renders correctly 1`] = `
+exports[`PhotoGrid Component renders correctly with photos 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <PhotoGrid
+    isFetching={false}
     photos={
         Array [
-            Object {},
+            Object {
+              "id": "1",
+              "urls": Object {
+                "small": "http",
+              },
+              "user": Object {
+                "links": Object {
+                  "self": "https",
+                },
+                "name": "Tom",
+              },
+            },
           ]
     }
 />,
@@ -24,91 +36,237 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header
-          as="h1"
-          className="photo-grid-header"
-          textAlign="center"
+        <Connect(Header) />,
+        Array [
+          <div
+            className="panel"
 >
-          Unsplashgram
-</Header>,
-        <Grid
-          className="photo-grid"
-          columns={3}
->
-          <GridColumn
-                    className="photo-grid-column"
-          >
-                    <Photo
-                              photo={Object {}}
-                              renderSmall={true}
-                    />
-          </GridColumn>
-</Grid>,
+            <Connect(PhotoContainer)
+                        id="1"
+                        style={
+                                    Object {
+                                                "maxWidth": 400,
+                                              }
+                        }
+                        url="http"
+                        user={
+                                    Object {
+                                                "links": Object {
+                                                  "self": "https",
+                                                },
+                                                "name": "Tom",
+                                              }
+                        }
+            />
+</div>,
+        ],
       ],
+      "className": "wrapper",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "as": "h1",
-          "children": "Unsplashgram",
-          "className": "photo-grid-header",
-          "textAlign": "center",
-        },
+        "nodeType": "class",
+        "props": Object {},
         "ref": null,
-        "rendered": "Unsplashgram",
+        "rendered": null,
         "type": [Function],
       },
       Object {
         "instance": null,
-        "key": undefined,
-        "nodeType": "function",
+        "key": "0",
+        "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <GridColumn
-              className="photo-grid-column"
->
-              <Photo
-                            photo={Object {}}
-                            renderSmall={true}
-              />
-</GridColumn>,
-          ],
-          "className": "photo-grid",
-          "columns": 3,
+          "children": <Connect(PhotoContainer)
+            id="1"
+            style={
+                        Object {
+                                    "maxWidth": 400,
+                                  }
+            }
+            url="http"
+            user={
+                        Object {
+                                    "links": Object {
+                                      "self": "https",
+                                    },
+                                    "name": "Tom",
+                                  }
+            }
+/>,
+          "className": "panel",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": "0",
-            "nodeType": "function",
-            "props": Object {
-              "children": <Photo
-                photo={Object {}}
-                renderSmall={true}
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "id": "1",
+            "style": Object {
+              "maxWidth": 400,
+            },
+            "url": "http",
+            "user": Object {
+              "links": Object {
+                "self": "https",
+              },
+              "name": "Tom",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Connect(Header) />,
+          Array [
+            <div
+              className="panel"
+>
+              <Connect(PhotoContainer)
+                            id="1"
+                            style={
+                                          Object {
+                                                        "maxWidth": 400,
+                                                      }
+                            }
+                            url="http"
+                            user={
+                                          Object {
+                                                        "links": Object {
+                                                          "self": "https",
+                                                        },
+                                                        "name": "Tom",
+                                                      }
+                            }
+              />
+</div>,
+          ],
+        ],
+        "className": "wrapper",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "host",
+          "props": Object {
+            "children": <Connect(PhotoContainer)
+              id="1"
+              style={
+                            Object {
+                                          "maxWidth": 400,
+                                        }
+              }
+              url="http"
+              user={
+                            Object {
+                                          "links": Object {
+                                            "self": "https",
+                                          },
+                                          "name": "Tom",
+                                        }
+              }
 />,
-              "className": "photo-grid-column",
+            "className": "panel",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "id": "1",
+              "style": Object {
+                "maxWidth": 400,
+              },
+              "url": "http",
+              "user": Object {
+                "links": Object {
+                  "self": "https",
+                },
+                "name": "Tom",
+              },
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "photo": Object {},
-                "renderSmall": true,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+            "rendered": null,
             "type": [Function],
           },
-        ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`PhotoGrid Component renders correctly without photos 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PhotoGrid
+    isFetching={false}
+    photos={Array []}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Connect(Header) />,
+        Array [],
+      ],
+      "className": "wrapper",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
         "type": [Function],
       },
     ],
@@ -121,91 +279,20 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header
-            as="h1"
-            className="photo-grid-header"
-            textAlign="center"
->
-            Unsplashgram
-</Header>,
-          <Grid
-            className="photo-grid"
-            columns={3}
->
-            <GridColumn
-                        className="photo-grid-column"
-            >
-                        <Photo
-                                    photo={Object {}}
-                                    renderSmall={true}
-                        />
-            </GridColumn>
-</Grid>,
+          <Connect(Header) />,
+          Array [],
         ],
+        "className": "wrapper",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "as": "h1",
-            "children": "Unsplashgram",
-            "className": "photo-grid-header",
-            "textAlign": "center",
-          },
+          "nodeType": "class",
+          "props": Object {},
           "ref": null,
-          "rendered": "Unsplashgram",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": Array [
-              <GridColumn
-                className="photo-grid-column"
->
-                <Photo
-                                photo={Object {}}
-                                renderSmall={true}
-                />
-</GridColumn>,
-            ],
-            "className": "photo-grid",
-            "columns": 3,
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": "0",
-              "nodeType": "function",
-              "props": Object {
-                "children": <Photo
-                  photo={Object {}}
-                  renderSmall={true}
-/>,
-                "className": "photo-grid-column",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "photo": Object {},
-                  "renderSmall": true,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-          ],
+          "rendered": null,
           "type": [Function],
         },
       ],
